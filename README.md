@@ -1,2 +1,3 @@
 # monicahq-multi-arch
-Monica HQ for ARM, ARM64 and AMD64
+
+In this repository you will soon find a docker image for Monica HQ that is actually multi-arch compatible.
