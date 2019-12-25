@@ -17,7 +17,22 @@ docker volume create monica_data
 docker run --name=monica --env-file=monica.env -e FIRST_USER=your@email.com -p 80:80 -v monica_data:/var/www/storage -d jc5x/monica-multi-arch
 ```
 
-This should start a pretty basic (but empty) instance of Monica HQ, no matter on what architecture you're running.
+This should start a pretty basic instance of Monica HQ, no matter on what architecture you're running. If the database you've configured
+in `monica.env` is empty, the script will automatically create a new admin user that you can login to. The username is `your@email.com`
+(the same value as you see in the `docker run`-command) and the password is generated randomly. To see the password, use the following command:
+
+```bash
+docker logs $(docker container ls -a -f name=monica --format="{{.ID}}")
+```
+
+In the output, you will see the password, like so:
+
+```
+----------------------------------------------------------------
+Created new user "your@email.com" with password: <password>>
+----------------------------------------------------------------
+
+```
 
 ### Detailed run command
 
