@@ -81,7 +81,7 @@ if (true === $createUser) {
 }
 if (false === $createUser) {
     debugMessage('----------------------------------------------------------------');
-    debugMessage('Will NOT remove default users and create user "%s", because users already exist in the system.');
+    debugMessage(sprintf('Will NOT remove default users and create user "%s", because users already exist in the system.', env('FIRST_USER')));
     debugMessage('----------------------------------------------------------------');
 }
 debugMessage('End of init.php');
