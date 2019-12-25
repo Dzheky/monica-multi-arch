@@ -26,6 +26,7 @@ jobs:
       arch: arm64
       env: ARCH=arm64
       stage: build
+      script: ./.deploy/travis.sh
     - dist: xenial
       arch: amd64
       stage: manifest
