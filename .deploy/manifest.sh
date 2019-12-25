@@ -8,10 +8,10 @@ sudo service docker restart
 
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-TARGET=jc5x/monicahq-multi-arch:latest
-ARM32=jc5x/monicahq-multi-arch:latest-arm
-ARM64=jc5x/monicahq-multi-arch:latest-arm64
-AMD64=jc5x/monicahq-multi-arch:latest-amd64
+TARGET=jc5x/monica-multi-arch:latest
+ARM32=jc5x/monica-multi-arch:latest-arm
+ARM64=jc5x/monica-multi-arch:latest-arm64
+AMD64=jc5x/monica-multi-arch:latest-amd64
 
 echo "Push latest-* builds to $TARGET"
 
