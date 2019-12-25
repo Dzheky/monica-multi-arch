@@ -14,7 +14,7 @@ run the following command to start Monica HQ:
 
 ```bash
 docker volume create monica_data
-docker run --name=monica --env-file=monica.env -e FIRST_USER_EMAIL=your@email.com -p 80:80 -v monica_data:/var/www/storage -d jc5x/monicahq-multi-arch:develop
+docker run --name=monica --env-file=monica.env -e FIRST_USER=your@email.com -p 80:80 -v monica_data:/var/www/storage -d jc5x/monica-multi-arch
 ```
 
 This should start a pretty basic (but empty) instance of Monica HQ, no matter on what architecture you're running.
@@ -51,19 +51,24 @@ If the database is empty, create new user with this email address
 -e FIRST_USER=your@email.com
 ```
 
-docker run    -p 80:80 -v monica_data:/var/www/storage -d jc5x/monicahq-multi-arch:develop
+It will expose itself on port 80. Change the *first* 80 to something else, if you want to expose Monica on a different port.
 
+```
+-p 80:80
+```
 
+This makes sure Monica's data is persisted.
 
-## Empty database?
+```
+-v monica_data:/var/www/storage
+```
 
-This image can do data migrations (useful for upgrades). If the database does not exist, the image won't run. If the database exists it will create all tables
-and create a default user with a random password.
+And this is a reference to the actual image:
 
-* `admin@admin.com` with password `admin0`.
-* `blank@blank.com` with password `blank0`.
+```
+-d jc5x/monica-multi-arch
+```
 
-Make *sure* you either delete or disable these accounts.  
 
 ## Weekly build
 
