@@ -5,6 +5,11 @@ declare(strict_types=1);
  * The encrypt, bcrypt and hash function has been taken from Laravel.
  */
 
+if ('invalid' === env('FIRST_USER', 'invalid')) {
+    debugMessage('There is no FIRST_USER environment variable, so the script cannot run.');
+    debugMessage('Script will exit(0) because this doesn\'t have to be an error.');
+    exit(0);
+}
 
 if (!function_exists('bcrypt')) {
     /**
