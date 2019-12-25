@@ -24,7 +24,7 @@ if [ $ARCH == "arm" ]; then
 fi
 
 # This script responds only to the MASTER branch:
-LABEL=jc5x/monicahq-multi-arch:latest-$ARCH
+LABEL=jc5x/monica-multi-arch:latest-$ARCH
 docker build -t $LABEL -f Dockerfile.$ARCH .
 docker push $LABEL
 
