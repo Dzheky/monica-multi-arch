@@ -4,22 +4,27 @@
 
 Monica is a well known personal CRM. You can read all about it [in their repository](https://github.com/monicahq/monica).
 
-In this repository you will find a docker image for Monica that is multi-arch compatible, meaning that it will run on both Intel and ARM processors
-such as Raspberry PI's.
+In this repository you will find [a docker image for Monica](https://hub.docker.com/repository/docker/jc5x/monica-multi-arch) that is multi-arch compatible:
+
+* AMD64: This is plain old x86-64 and can be found in any modern PC. If you don't know what you're running yourself, it's x86-64.
+* ARM: Also known as ARM 32-bit, this is the platform of most older Raspberry PI's, up to the RPi 2 (model 1.1)
+* ARM64: It's the same ARM platform, but 64-bits. Is used in all modern Raspberry PI's.
+
 
 ## Installation
 
 In this repository you'll find `monica.env` that's filled with default values. Edit the file, and save it somewhere local. Then, 
-run the following command to start Monica HQ:
+run the following commands to start Monica:
 
 ```bash
 docker volume create monica_data
 docker run --name=monica --env-file=monica.env -e FIRST_USER=your@email.com -p 80:80 -v monica_data:/var/www/storage -d jc5x/monica-multi-arch
 ```
 
-This should start a pretty basic instance of Monica HQ, no matter on what architecture you're running. If the database you've configured
+This should start a pretty basic instance of Monica, no matter on what architecture you're running. If the database you've configured
 in `monica.env` is empty, the script will automatically create a new admin user that you can login to. The username is `your@email.com`
 (the same value as you see in the `docker run` command) and the password is generated randomly. To see the password, use the following command:
+
 
 ```bash
 docker logs $(docker container ls -a -f name=monica --format="{{.ID}}")
