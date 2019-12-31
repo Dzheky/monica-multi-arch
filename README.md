@@ -4,7 +4,7 @@
 
 Monica is a well known personal CRM. You can read all about it [in their repository](https://github.com/monicahq/monica).
 
-In this repository you will find [a docker image for Monica](https://hub.docker.com/repository/docker/jc5x/monica-multi-arch) that is multi-arch compatible:
+In this repository you will find [a docker image for Monica](https://hub.docker.com/r/jc5x/monica-multi-arch) that is multi-arch compatible:
 
 * AMD64: This is plain old x86-64 and can be found in any modern PC. If you don't know what you're running yourself, it's x86-64.
 * ARM: Also known as ARM 32-bit, this is the platform of most older Raspberry PI's, up to the RPi 2 (model 1.1)
