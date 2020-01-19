@@ -18,4 +18,8 @@ chmod 775 /var/www/storage
 cd /var/www
 php artisan passport:keys
 php artisan migrate --seed
+php artisan route:clear
+php artisan view:clear
+php artisan config:clear
+php artisan storage:link
 php /init.php
