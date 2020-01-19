@@ -8,6 +8,7 @@ mkdir -p /var/www/storage/framework/testing
 mkdir -p /var/www/storage/framework/views
 mkdir -p /var/www/storage/framework/views
 mkdir -p /var/www/storage/logs
+mkdir -p /var/www/storage/avatars
 
 # make sure ownership is OK.
 chown -R www-data:www-data /var/www
