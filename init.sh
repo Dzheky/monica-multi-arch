@@ -23,3 +23,4 @@ php artisan view:clear
 php artisan config:clear
 php artisan storage:link
 php /init.php
+php artisan monica:update
